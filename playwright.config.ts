@@ -37,7 +37,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: {
-        headless: false,
+        headless: true,
         channel: 'chrome',
         permissions: ['camera', 'microphone'],
         launchOptions: {

@@ -8,7 +8,9 @@ export default class WelcomeScreen {
         this.page = page;
     }
 
+    //
     // All locator getters
+    //
     requestPermissionsButton = () => this.page.getByRole('button', { name: 'Request Permissions'});
     usernameTextField = () => this.page.getByPlaceholder('What\'s your name?');
     joinButton = () => this.page.getByRole('button', { name: 'Join'});
@@ -20,7 +22,9 @@ export default class WelcomeScreen {
         return this;
     }
 
+    //
     // Abstract all user interactions
+    //
     public async doRequestPermissions(): Promise<this> {
         // TODO: Handle Request permissions for real video/audio tracks
         await this.requestPermissionsButton().click();

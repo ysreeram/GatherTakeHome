@@ -1,9 +1,7 @@
-import { expect, test } from '@playwright/test';
-import WelcomeScreen from './pom/Welcome.screen';
-import OfficeSpaceScreen from './pom/Space.screen';
+import { test } from "./fixtures/gather";
 
-test('take home challenge', async ({ page }) => {
-  await new WelcomeScreen(page).goto()
+test('take home challenge', async ({ page, welcomeScreen }) => {
+  await welcomeScreen.goto()
     .then(welcomeScreen => welcomeScreen.doRequestPermissions())
     .then(welcomeScreen => welcomeScreen.doJoinOfficeSpace('Nerdy'))
     .then(officeSpaceScreen => officeSpaceScreen.doNavigateToPrivateArea())

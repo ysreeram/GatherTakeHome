@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import OfficeSpaceScreen from "./Space.screen";
+import OfficeSpaceScreen from "./space.screen";
 
 export default class WelcomeScreen {
     page: Page;

@@ -45,9 +45,9 @@ export default class OfficeSpaceScreen {
     }
 
     public async doSendMessage(to: string, message: string): Promise<this> {
-        await this.chatReceipientButton('sreeram yerrapragada').click();
+        await this.chatReceipientButton(to).click();
         await this.createChatButton().click();
-        await this.chatMessageTextbox().fill('Hello World');
+        await this.chatMessageTextbox().fill(message);
         await this.chatMessageTextbox().press('Enter');
         return this;
     }
@@ -57,7 +57,7 @@ export default class OfficeSpaceScreen {
     //
     public async assertMessageSent(message: string) {
         await expect(
-            this.messageContentDiv().getByText('Hello World', { exact: true})
+            this.messageContentDiv().getByText(message, { exact: true})
         ).toBeVisible();
     }
 
